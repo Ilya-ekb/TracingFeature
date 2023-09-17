@@ -8,9 +8,9 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class SplineBuilder : MonoBehaviour
 {
-    [FormerlySerializedAs("Image")] [SerializeField] private Image image;
-    [FormerlySerializedAs("Spline")] [SerializeField] private CurvySpline spline;
-    [FormerlySerializedAs("Interpolation")] [SerializeField] public CurvyInterpolation interpolation;
+    [SerializeField] private Image image;
+    [SerializeField] private CurvySpline spline;
+    [SerializeField] private CurvyInterpolation interpolation;
     [SerializeField] private float threshold = 0.5f;
     [SerializeField] private int pixelStep = 10;
 

@@ -43,7 +43,6 @@ public class DragController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             return;
         var dir = eventData.delta.normalized;
         dir = Vector3.right * dir.x;
-        Debug.Log(dir);
         direction = Vector3.Dot(Vector3.right, dir) > 0 ? Direction.Clockwise : Direction.CounterClockwise;
         lastPosition = splineController.Position = (float)direction;
         OnApplyDirection?.Invoke(direction);
@@ -51,7 +50,7 @@ public class DragController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (direction is Direction.None || (!isHandlerTouched && !isCanDrag))
+        if (direction is Direction.None || (!isHandlerTouched && !isCanDrag) || !splineController.Spline)
             return;
 
         var inputPosition = eventData.pointerCurrentRaycast.worldPosition;

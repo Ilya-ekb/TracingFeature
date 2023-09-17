@@ -13,9 +13,10 @@ public class Handler : MonoBehaviour
     [SerializeField] private float interactionRadius;
 
     private FadedImage handlerImage;
+    private FadedImage dottedImage;
+
     private DragController dragController;
     private SplineController splineController;
-    private FadedImage dottedImage;
 
     public void SetDirection(Direction direction)
     {
@@ -49,13 +50,13 @@ public class Handler : MonoBehaviour
         dragController ??= GetComponentInChildren<DragController>();
         splineController ??= GetComponentInChildren<SplineController>();
         handlerImage ??= GetComponentInChildren<FadedImage>();
-        splineController.Spline = transform.parent.GetComponentInChildren<CurvySpline>();
-        if (!dragController)
+        if (!dragController || !splineController)
         {
             enabled = false;
             return;
         }
 
+        splineController.Spline = transform.parent.GetComponentInChildren<CurvySpline>();
         dragController.Initiate(splineController, interactionRadius);
         dragController.OnApplyDirection += OnApplyDirection;
         dragController.OnChangePosition += OnChangePosition;
@@ -68,6 +69,7 @@ public class Handler : MonoBehaviour
 
         dragController.OnApplyDirection -= OnApplyDirection;
         dragController.OnChangePosition -= OnChangePosition;
+        splineController.Spline = null;
         OnSelectDirection = null;
         OnHandling = null;
     }
