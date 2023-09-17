@@ -1,0 +1,16 @@
+{
+    "name": "DevTools.Classes",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3c845d79c98c422cb3a39353d26639fe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

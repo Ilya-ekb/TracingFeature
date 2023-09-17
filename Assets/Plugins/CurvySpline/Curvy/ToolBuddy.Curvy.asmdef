@@ -1,0 +1,19 @@
+{
+    "name": "ToolBuddy.Curvy",
+    "rootNamespace": "",
+    "references": [
+        "FluffyUnderware.DevTools",
+        "LibTessDotNet",
+        "DevTools.Extentions",
+        "DevTools.Classes"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

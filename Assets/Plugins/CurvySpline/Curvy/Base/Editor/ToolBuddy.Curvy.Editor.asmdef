@@ -1,0 +1,23 @@
+{
+    "name": "ToolBuddy.Curvy.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75f1914315ffbf24b80f074ea444f640",
+        "GUID:e115e455520af3142a6b0e438a9429dc",
+        "GUID:78a4c65d85e45204cb8cd80622b37935",
+        "GUID:556d2d31da144175b19703a68359452f",
+        "GUID:3c845d79c98c422cb3a39353d26639fe",
+        "GUID:7ad6bf6506b049a0ace103827d955b1d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

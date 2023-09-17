@@ -1,0 +1,18 @@
+{
+    "name": "FluffyUnderware.DevTools",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7ad6bf6506b049a0ace103827d955b1d",
+        "GUID:3c845d79c98c422cb3a39353d26639fe",
+        "GUID:556d2d31da144175b19703a68359452f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
