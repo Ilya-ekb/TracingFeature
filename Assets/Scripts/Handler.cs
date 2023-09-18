@@ -16,7 +16,6 @@ public class Handler : MonoBehaviour
     private FadedImage dottedImage;
 
     private DragController dragController;
-    private SplineController splineController;
 
     public void SetDirection(Direction direction)
     {
@@ -42,22 +41,22 @@ public class Handler : MonoBehaviour
             dottedImage.Fade();
         if(handlerImage)
             handlerImage.Fade();
+        if(dragController)
+            dragController.Drop();
         enabled = false;
     }
 
     private void OnEnable()
     {
         dragController ??= GetComponentInChildren<DragController>();
-        splineController ??= GetComponentInChildren<SplineController>();
         handlerImage ??= GetComponentInChildren<FadedImage>();
-        if (!dragController || !splineController)
+        if (!dragController)
         {
             enabled = false;
             return;
         }
 
-        splineController.Spline = transform.parent.GetComponentInChildren<CurvySpline>();
-        dragController.Initiate(splineController, interactionRadius);
+        dragController.Initiate(interactionRadius);
         dragController.OnApplyDirection += OnApplyDirection;
         dragController.OnChangePosition += OnChangePosition;
     }
@@ -69,7 +68,6 @@ public class Handler : MonoBehaviour
 
         dragController.OnApplyDirection -= OnApplyDirection;
         dragController.OnChangePosition -= OnChangePosition;
-        splineController.Spline = null;
         OnSelectDirection = null;
         OnHandling = null;
     }

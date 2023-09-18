@@ -1,4 +1,5 @@
 using System;
+using FluffyUnderware.Curvy;
 using FluffyUnderware.Curvy.Controllers;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,11 +18,17 @@ public class DragController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private bool isHandlerTouched;
     private bool isCanDrag;
 
-    public void Initiate(SplineController controller, float radius)
+    public void Initiate(float radius)
     {
         interactionRadius = radius;
-        splineController = controller;
+        splineController = GetComponentInChildren<SplineController>();
+        splineController.Spline = transform.parent.GetComponentInChildren<CurvySpline>();
         lastPosition = 0;
+    }
+
+    public void Drop()
+    {
+        splineController.Spline = null;
     }
 
     public void ForceSetDirection(Direction dir)
